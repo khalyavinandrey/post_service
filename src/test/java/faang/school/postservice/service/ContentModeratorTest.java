@@ -10,7 +10,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.*;
 import org.mockito.junit.jupiter.MockitoExtension;
-import faang.school.postservice.service.PostService;
 
 import java.time.LocalDateTime;
 import java.util.List;

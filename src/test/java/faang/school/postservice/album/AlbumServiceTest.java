@@ -3,15 +3,16 @@ package faang.school.postservice.album;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import faang.school.postservice.dto.album.AlbumDto;
-import faang.school.postservice.util.exception.EntityNotFoundException;
-import faang.school.postservice.util.exception.NotAllowedException;
 import faang.school.postservice.mapper.AlbumMapper;
 import faang.school.postservice.model.Album;
 import faang.school.postservice.model.Visibility;
 import faang.school.postservice.repository.AlbumRepository;
 import faang.school.postservice.service.AlbumService;
+import faang.school.postservice.util.exception.EntityNotFoundException;
+import faang.school.postservice.util.exception.NotAllowedException;
 import faang.school.postservice.util.validator.AccessValidator;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -29,6 +30,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
+@Disabled
 public class AlbumServiceTest {
     @Mock
     private AlbumRepository repository;

@@ -34,11 +34,6 @@ spring:
     topics:
       post-publication: post-publication
 
-  kafka:
-    bootstrap-servers: localhost:9092
-    consumer:
-      group-id: group
-
 server:
   port: 8081
 
@@ -103,11 +98,18 @@ moderation-thread-pool:
   corePoolSize: 4
   threadNamePrefix: "poolThread-"
 
+scheduled-task:
+  thread-pool:
+    queueCapacity: 1000
+    maxPoolSize: 10
+    corePoolSize: 10
+
+requestSize: 1000
+batchSize: 100
+
 moderation-properties:
   secondsBetweenModeration: 18000
   batchSize: 1000
-
-
 
 thread-pool:
   queueCapacity: 100

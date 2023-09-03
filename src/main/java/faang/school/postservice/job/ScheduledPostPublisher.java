@@ -1,7 +1,9 @@
 package faang.school.postservice.job;
 
 import faang.school.postservice.service.PostService;
+import faang.school.postservice.service.ScheduledPostService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -9,10 +11,11 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class ScheduledPostPublisher {
 
-    private final PostService postService;
+    private final ScheduledPostService scheduledPostService;
 
     @Scheduled(fixedRateString = "${schedule.time_interval}")
+    @Async("scheduledTaskExecutor")
     public void publishScheduledPosts() {
-        postService.publishScheduledPosts();
+        scheduledPostService.completeScheduledPosts();
     }
 }

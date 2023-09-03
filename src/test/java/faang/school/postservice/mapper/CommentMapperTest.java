@@ -1,12 +1,12 @@
 package faang.school.postservice.mapper;
 
 import faang.school.postservice.dto.comment.CommentDto;
-import faang.school.postservice.util.exception.NotFoundException;
 import faang.school.postservice.model.Comment;
 import faang.school.postservice.model.Like;
 import faang.school.postservice.model.Post;
 import faang.school.postservice.repository.LikeRepository;
 import faang.school.postservice.repository.PostRepository;
+import faang.school.postservice.util.exception.NotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

@@ -9,7 +9,6 @@ import faang.school.postservice.messaging.postevent.PostEventPublisher;
 import faang.school.postservice.model.Post;
 import faang.school.postservice.publisher.PostViewEventPublisher;
 import faang.school.postservice.repository.PostRepository;
-import faang.school.postservice.service.HashtagService;
 import faang.school.postservice.util.exception.PostNotFoundException;
 import faang.school.postservice.util.validator.PostServiceValidator;
 import lombok.RequiredArgsConstructor;
@@ -144,7 +143,7 @@ public class PostService {
         postRepository.save(post);
     }
 
-    private Post getPostById(Long id) {
+    public Post getPostById(Long id) {
         return postRepository.findById(id)
                 .orElseThrow(() -> new PostNotFoundException("Post with id " + String.format("%d", id) + " not found"));
     }

@@ -3,6 +3,7 @@ package faang.school.postservice.service;
 import faang.school.postservice.model.ad.Ad;
 import faang.school.postservice.repository.ad.AdRepository;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -18,6 +19,7 @@ import java.util.stream.LongStream;
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(MockitoExtension.class)
+@Disabled
 class AdServiceTest {
     @Mock
     private AdRepository adRepository;

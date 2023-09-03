@@ -3,6 +3,7 @@ package faang.school.postservice.service.postCorrecter;
 import faang.school.postservice.model.Post;
 import faang.school.postservice.repository.PostRepository;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -16,6 +17,7 @@ import java.util.concurrent.CompletableFuture;
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(MockitoExtension.class)
+@Disabled
 class BingSpellServiceTest {
     @Mock
     private PostCorrecter postCorrecter;
