@@ -1,8 +1,7 @@
-package faang.school.postservice.messaging.postevent;
+package faang.school.postservice.messaging.post;
 
 import faang.school.postservice.dto.post.PostEvent;
 import faang.school.postservice.model.Post;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;

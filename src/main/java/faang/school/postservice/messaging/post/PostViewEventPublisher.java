@@ -1,4 +1,4 @@
-package faang.school.postservice.publisher;
+package faang.school.postservice.messaging.post;
 
 import faang.school.postservice.dto.post.PostViewEvent;
 import faang.school.postservice.mapper.PostViewEventMapper;
@@ -17,14 +17,15 @@ import java.util.concurrent.CompletableFuture;
 @Slf4j
 public class PostViewEventPublisher {
 
-    private final KafkaTemplate<String, PostViewEvent> kafkaTemplate;
+    private final KafkaTemplate<String, PostViewEvent> kafkaTemplateForPostViewEvent;
     private final PostViewEventMapper mapper;
 
     @SneakyThrows
     public void publish(Post post) {
         PostViewEvent event = mapper.toEvent(post);
 
-        CompletableFuture<SendResult<String, PostViewEvent>> future = kafkaTemplate.send("post-view", event);
+        CompletableFuture<SendResult<String, PostViewEvent>> future = kafkaTemplateForPostViewEvent
+                .send("post-view", event);
 
         future.whenComplete((result, e) -> {
             if (e == null) {
